@@ -70,12 +70,16 @@ class MainActivity : Activity(), ScanService.Listener {
             ActivityCompat.requestPermissions(this, arrayOf(Manifest.permission.POST_NOTIFICATIONS), NOTIF_PERM)
         }
 
-        val accent = Color.parseColor("#3F51B5")
-        val danger = Color.parseColor("#B00020")
+        val accent = ContextCompat.getColor(this, R.color.accent)
+        val danger = ContextCompat.getColor(this, R.color.danger)
+        val buttonText = ContextCompat.getColor(this, R.color.button_text)
+        val textPrimary = ContextCompat.getColor(this, R.color.text_primary)
+        val textSecondary = ContextCompat.getColor(this, R.color.text_secondary)
+        val textStats = ContextCompat.getColor(this, R.color.text_stats)
 
         fun styledButton(text: String, color: Int = accent) = Button(this).apply {
             this.text = text
-            setTextColor(Color.WHITE)
+            setTextColor(buttonText)
             isAllCaps = false
             textSize = 16f
             setPadding(24, 30, 24, 30)
@@ -92,13 +96,13 @@ class MainActivity : Activity(), ScanService.Listener {
             setPadding(40, 60, 40, 60)
         }
         val title = TextView(this).apply {
-            text = "Tree TXT"; textSize = 30f; setTextColor(Color.parseColor("#1A1A1A"))
+            text = "Tree TXT"; textSize = 30f; setTextColor(textPrimary)
         }
         val info = TextView(this).apply {
             text = "Generate a Linux tree-style text file from huge folders. " +
                 "Scanning keeps running even if you switch apps."
             setPadding(0, 12, 0, 8)
-            setTextColor(Color.parseColor("#666666"))
+            setTextColor(textSecondary)
         }
 
         pickBtn = styledButton("1. Select folder")
@@ -112,12 +116,12 @@ class MainActivity : Activity(), ScanService.Listener {
         }
         stats = TextView(this).apply {
             setPadding(0, 14, 0, 0)
-            setTextColor(Color.parseColor("#444444"))
+            setTextColor(textStats)
         }
         status = TextView(this).apply {
             text = "No folder selected."
             setPadding(0, 10, 0, 0)
-            setTextColor(Color.parseColor("#1A1A1A"))
+            setTextColor(textPrimary)
             textSize = 15f
         }
 

@@ -1,0 +1,9 @@
+<resources>
+    <color name="background">#FAFAFA</color>
+    <color name="text_primary">#1A1A1A</color>
+    <color name="text_secondary">#666666</color>
+    <color name="text_stats">#444444</color>
+    <color name="accent">#3F51B5</color>
+    <color name="danger">#B00020</color>
+    <color name="button_text">#FFFFFF</color>
+</resources>
